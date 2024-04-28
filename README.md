@@ -34,3 +34,10 @@ After changing the coordinates, you should be ready to go.
 4. Afterwards, you should be ready to start the script. If it doesn't work, you maybe need to implement some delays or extend the main delay at the start of the script (default is about 1.3 seconds, to make sure that the overlay messages that pop up when you copy the password disappear in time).
 
 While debugging and making clear that the script runs, make sure to set the loop amount very low, and/or set the main delay very high, so that you've got time to stop the scripts in between the cycles.
+
+Because this script is really dumb, you'll need to manually copy the last items, as the script only ever takes the items at the top of the Bitwarden app. So make sure that you don't forget to check the last copied item, and manually add the missing ones at the end.
+
+When the list reaches the end, it will probably copy the last item multiple times, but this is no problem.
+
+#### Converting json file
+The file that was created in TextEdit is in a JSON format, but Bitwarden wants a CSV format. The script `csv_from_data.py` takes the file `data` (which should be the created TextEdit file), and converts it into CSV `data.csv`. This CSV file can now be parsed from Bitwarden into a new account.

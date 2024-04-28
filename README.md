@@ -27,6 +27,10 @@ Second one is a triple click, that is needed to copy the name of the password it
 I've labelled the click coords with comments, so that you know to which coordinates the clicks should point.
 You need to manually find these. You can do this by using the macOS-integrated Screenshot tool (it's actually just called "Screenshot"). Select the "select area on screen" option, and then put the rectangle to the upper left part of the screen, right to the top-left edge. Now, by moving the bottom-right edge you can find out the coordinates of the respective buttons, displayed just at that edge (in the format `(XXXxYYY)`).
 #### Running the program
-After changing the coordinates, you should be ready to go. The script needs the Bitwarden app to be opened, on the default vault screen (that's the screen that pops up when you start the app). You should decrypt the vault by fingerprint, Face ID, or whatever. Next, also start TextEdit, set the text mode (via View -> Plain Text) to plain text. Afterwards, you should be ready to start the script. If it doesn't work, you maybe need to implement some delays or extend the main delay at the start of the script (default is about 1.3 seconds, to make sure that the overlay messages that pop up when you copy the password disappear in time).
+After changing the coordinates, you should be ready to go. 
+1. The script needs the Bitwarden app to be opened, on the default vault screen (that's the screen that pops up when you start the app). 
+2. You should decrypt the vault by fingerprint, Face ID, or whatever. 
+3. Next, also start TextEdit, set the text mode (via View -> Plain Text) to plain text. 
+4. Afterwards, you should be ready to start the script. If it doesn't work, you maybe need to implement some delays or extend the main delay at the start of the script (default is about 1.3 seconds, to make sure that the overlay messages that pop up when you copy the password disappear in time).
 
 While debugging and making clear that the script runs, make sure to set the loop amount very low, and/or set the main delay very high, so that you've got time to stop the scripts in between the cycles.

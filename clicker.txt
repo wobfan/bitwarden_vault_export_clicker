@@ -1,0 +1,119 @@
+-- enter first [ to start the list
+tell application "TextEdit"
+	activate
+	tell application "System Events"
+		key code 23 using option down # [
+		key code 36 # enter
+	end tell
+end tell
+-- starting the loop for the passwords
+-- warning: leave the repeat counts on 1 or 2 until you definitely know
+-- that the scripts and coordinates will work. it is sometimes hard to 
+-- stop the script after it started.
+-- if you want to be sure to have enough time to stop the script between the cycles,
+-- set the delay in the second-next line to like 5 seconds.
+repeat 1 times # set this to you amount of passwords (LEAVE THIS ON 1 OR 2 UNTIL YOU KNOW THAT EVERYTHING WORKS)
+	delay 1.3 # needed for the overlay messages to disappear (all the other delays are also needed)
+	-- copying name from bitwarden
+	tell application "Bitwarden"
+		activate
+		tell application "System Events"
+			click at {200, 80} # title bar (not search bar) of Bitwarden
+			key code 125 # arrow down
+			delay 0.2
+			click at {300, 100} # first item in vault list
+			click at {300, 100} # first item in vault list
+			do shell script "/opt/homebrew/bin/cliclick tc:578,188" # right on the name of the item
+			delay 0.2
+			key code 8 using command down # c
+		end tell
+	end tell
+	-- pasting name to textedit
+	tell application "TextEdit"
+		activate
+		tell application "System Events"
+			key code 48 # tab
+			key code 23 using option down # [
+			key code 19 using shift down # "
+			key code 9 using command down # v
+			key code 51 # delete
+			key code 19 using shift down # "
+			key code 43 # ,
+			key code 49 # space
+		end tell
+	end tell
+	-- copying username from bitwarden
+	tell application "Bitwarden"
+		activate
+		tell application "System Events"
+			click at {200, 80} # title bar of Bitwarden
+			delay 0.2
+			do shell script "/opt/homebrew/bin/cliclick c:300,100" # first item in vault list
+			click at {900, 250} # copy button next to the username
+			click at {900, 250} # copy button next to the username
+			delay 0.2
+		end tell
+	end tell
+	-- pasting username to textedit
+	tell application "TextEdit"
+		activate
+		tell application "System Events"
+			key code 19 using shift down # "
+			key code 9 using command down # v
+			key code 19 using shift down # "
+			key code 43 # ,
+			key code 49 # space
+		end tell
+	end tell
+	-- copying password from bitwarden
+	tell application "Bitwarden"
+		activate
+		tell application "System Events"
+			click at {200, 80} # title bar of Bitwarden
+			delay 0.2
+			click at {900, 300} # copy button next to the password
+			click at {900, 300} # copy button next to the password
+		end tell
+	end tell
+	-- pasting password to textedit
+	tell application "TextEdit"
+		activate
+		tell application "System Events"
+			key code 19 using shift down # "
+			key code 9 using command down # v
+			key code 19 using shift down # "
+			key code 43 # ,
+			key code 49 # space
+		end tell
+	end tell
+	-- copying website from bitwarden
+	tell application "Bitwarden"
+		activate
+		tell application "System Events"
+			click at {200, 80} # title bar Bitwarden
+			delay 0.2
+			click at {910, 390} # copy button next to a website
+			click at {910, 390} # copy button next to a website
+		end tell
+	end tell
+	-- pasting website to textedit
+	tell application "TextEdit"
+		activate
+		tell application "System Events"
+			key code 19 using shift down # "
+			key code 9 using command down # v
+			key code 19 using shift down # "
+			key code 22 using option down # ]
+			key code 43 # ,
+			key code 36 # enter
+		end tell
+	end tell
+end repeat
+-- ending the loop. writing ] to textedit to close the list.
+tell application "TextEdit"
+	activate
+	tell application "System Events"
+		key code 36 # enter
+		key code 22 using option down # ]
+	end tell
+end tell

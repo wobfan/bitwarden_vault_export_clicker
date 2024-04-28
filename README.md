@@ -22,7 +22,7 @@ While Apple Script can do non-context clicks, they don't act as normal clicks, l
 cliclick is needed for two purposes. The first is the focusing of a specific area of the Bitwarden app. This needs to be focused, so that the Arrow down keycode works. This wouldn't work with Apple Scripts clicks.
 Second one is a triple click, that is needed to copy the name of the password item. Probably it's possible somehow with Apple Script, but I was too lazy to find a way.
 
-### Usage
+## Usage
 #### Setting the coordinates
 I've labelled the click coords with comments, so that you know to which coordinates the clicks should point.
 You need to manually find these. You can do this by using the macOS-integrated Screenshot tool (it's actually just called "Screenshot"). Select the "select area on screen" option, and then put the rectangle to the upper left part of the screen, right to the top-left edge. Now, by moving the bottom-right edge you can find out the coordinates of the respective buttons, displayed just at that edge (in the format `(XXXxYYY)`).

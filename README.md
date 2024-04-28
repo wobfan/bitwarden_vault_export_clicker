@@ -1,5 +1,7 @@
 ## Bitwarden Vault Export Script
-This script manually exports names, passwords and websites of Bitwarden vault items. It's based on Apple Script and is written really really badly.
+This script manually exports names, passwords and websites of Bitwarden vault items in the Bitwarden macOS app. It's based on Apple Script and is written really really badly.
+You have to be logged into Bitwarden and it has to be unlocked (e.g. by using fingerprint).
+It's not meant as a perfect portable script, but merely as a proof of concept for hopeless people, to provide an example template to use to recover passwords.
 It requires exact coordinates of some buttons that are located in the Bitwarden macOS application.
 Also, it's currently only optimized for German keyboards, as I used keycodes (which you shouldn't do, for the sake of portability).
 
@@ -30,3 +32,4 @@ You need to manually find the coordinates. You can do this by using the macOS-in
 #### Running the program
 After changing the coordinates, you should be ready to go. The script needs the Bitwarden app to be opened, on the default vault screen (that's the screen that pops up when you start the app). You should decrypt the vault by fingerprint, Face ID, or whatever. Next, also start TextEdit, set the text mode (via View -> Plain Text) to plain text. Afterwards, you should be ready to start the script. If it doesn't work, you maybe need to implement some delays or extend the main delay at the start of the script (default is about 1.3 seconds, to make sure that the overlay messages that pop up when you copy the password disappear in time).
 
+While debugging and making clear that the script runs, make sure to set the loop amount very low, and/or set the main delay very high, so that you've got time to stop the scripts in between the cycles.
